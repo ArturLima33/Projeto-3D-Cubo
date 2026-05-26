@@ -9,6 +9,11 @@ export function createRubiksCube(scene) {
     for (let y = -1; y <= 1; y++) {
       for (let z = -1; z <= 1; z++) {
         const cubie = createCubie(x, y, z);
+        cubie.userData.initialPosition = {
+    x: cubie.position.x,
+    y: cubie.position.y,
+    z: cubie.position.z
+};
 
         cubies.push(cubie);
         cubeGroup.add(cubie);

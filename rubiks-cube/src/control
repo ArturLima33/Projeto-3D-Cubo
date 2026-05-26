@@ -1,0 +1,44 @@
+import { rotateFace } from '../cube/rotations.js';
+import { increaseMoves } from '../game/moveCounter.js';
+import { checkVictory } from '../game/victoryCheck.js';
+
+export function setupKeyboardControls(cube, scene) {
+    document.addEventListener('keydown', (event) => {
+
+        const key = event.key.toUpperCase();
+
+        switch (key) {
+            case 'U':
+                rotateFace(cube, scene, 'UP');
+                increaseMoves();
+                break;
+
+            case 'F':
+                rotateFace(cube, scene, 'FRONT');
+                increaseMoves();
+                break;
+
+            case 'R':
+                rotateFace(cube, scene, 'RIGHT');
+                increaseMoves();
+                break;
+
+            case 'L':
+                rotateFace(cube, scene, 'LEFT');
+                increaseMoves();
+                break;
+
+            case 'D':
+                rotateFace(cube, scene, 'DOWN');
+                increaseMoves();
+                break;
+
+            case 'B':
+                rotateFace(cube, scene, 'BACK');
+                increaseMoves();
+                break;
+        }
+
+        checkVictory(cube);
+    });
+}

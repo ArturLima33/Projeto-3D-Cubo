@@ -17,3 +17,39 @@ canvas {
   width: 100vw;
   height: 100vh;
 }
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+#move-counter {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 22px;
+    z-index: 100;
+}
+
+#shuffle-button {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#theme-button {
+    position: absolute;
+    top: 110px;
+    left: 20px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}

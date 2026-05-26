@@ -26,6 +26,7 @@ controls.enableDamping = true;
 addLights(scene);
 
 const { cubies } = createRubiksCube(scene);
+createInterface(scene, cubies);
 
 const grid = new THREE.GridHelper(8, 8);
 grid.position.y = -2;
@@ -47,9 +48,15 @@ document.addEventListener("keydown", (event) => {
   const key = event.key.toUpperCase();
   const face = keyToFace[key];
 
-  if (face) {
-    rotateFace(scene, cubies, face, !event.shiftKey);
-  }
+if (face) {
+  rotateFace(scene, cubies, face, !event.shiftKey);
+
+  increaseMoves();
+
+  setTimeout(() => {
+    checkVictory(cubies);
+  }, 500);
+}
 });
 
 window.addEventListener("resize", () => {
