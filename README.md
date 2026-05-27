@@ -1,4 +1,4 @@
-bl# Cubo Mágico 3D – Three.js
+# Cubo Mágico 3D – Three.js
 
 ## Integrantes
 
